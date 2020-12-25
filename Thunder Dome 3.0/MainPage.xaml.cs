@@ -29,7 +29,6 @@ namespace Thunder_Dome_3._0
     {
         public static string Name;
         public static List<Item> originList;
-        public static int FontSize;
         public static List<Item> OnHoldItems;
     }
 
@@ -40,7 +39,6 @@ namespace Thunder_Dome_3._0
         public bool weightChangable; // Is Left item grid available for changes (wieghts/hold/add/remove)
         public bool paused; // Pause Request Checking
         public bool stopped; // Stop Request Checking
-        public int MainFontSize; // Holds the current font size
         public int Speed; // Holds the current speed
 
         // Page Load //
@@ -83,7 +81,6 @@ namespace Thunder_Dome_3._0
                         }
                     }
                     ViewModel.AddRightItem(new Item());
-                    MainFontSize = GlobalVars.FontSize;
                     stream.Dispose();
                     Bindings.Update();
                     ViewModel.ClearLists(2);
@@ -222,6 +219,7 @@ namespace Thunder_Dome_3._0
                 PlayPauseText.Text = "Pause";
                 PlayPauseButton.Margin = new Thickness(-4,0,0,2);
                 AddButton.Visibility = Visibility.Collapsed;
+                ShufflerButton.Visibility = Visibility.Collapsed;
                 StopButton.Visibility = Visibility.Visible;
                 weightChangable = false;
                 Thread pickingThread = new Thread(new ThreadStart(RandomPickThread));
@@ -258,10 +256,6 @@ namespace Thunder_Dome_3._0
                 PlayPauseButton.Margin = new Thickness(-1, 0, 0, 2);
             }
             PlayPauseButton.IsSelected = false;
-        }
-        private void TestButton_Tapped(object sender, TappedRoutedEventArgs e ) // Used for testing the winner page 
-        {
-            this.Frame.Navigate(typeof(Winner));
         }
         private void AddButton_Tapped(object sender, TappedRoutedEventArgs e)   // |\ 
         {
@@ -318,39 +312,42 @@ namespace Thunder_Dome_3._0
             stopped = true;
             StopButton.Visibility = Visibility.Collapsed;
             AddButton.Visibility = Visibility.Visible;
+            ShufflerButton.Visibility = Visibility.Visible;
             paused = false;
             PlayPauseIcon.Symbol = Symbol.Play;
             PlayPauseText.Text = "Start";
             weightChangable = true;
             PlayPauseButton.Margin = new Thickness(-1, 0, 0, 2);
         }
-        private void FontChangeButtonDown_Click(object sender, RoutedEventArgs e) // Makes font size smaller on left click 
+        private void ShufflerButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            GlobalVars.FontSize -= 5;
-            MainFontSize -= 5;
-            ChangeSize.IsSelected = false;
-            Bindings.Update();
-        }
-        private void FontChangeButtonUp_Click(object sender, RoutedEventArgs e) // Makes font size bigger on right click 
-        {
-            GlobalVars.FontSize += 5;
-            MainFontSize += 5;
-            ChangeSize.IsSelected = false;
-            Bindings.Update();
+            Random rng = new Random();
+            List<Item> items = new List<Item>();
+            foreach (Item item in LeftItemGrid.Items)
+            {
+                items.Add(item);
+            }
+            var shuffled = items.OrderBy(a => rng.Next());
+            ViewModel.ClearLists(1);
+            foreach(Item item in shuffled)
+            {
+                ViewModel.AddLeftItem(item);
+            }
         }
         private void SpeedIndicatorItem_Tapped(object sender, TappedRoutedEventArgs e) // Increases time between picks on left click 
         {
-            Speed += 50;
-            SpeedNumberText.Text = Speed.ToString();
-            SpeedIndicatorItem.IsSelected = false;
-            Bindings.Update();
+            Thread Update = new Thread(SpeedUpdate);
+            Update.Start(0);
         }
         private void SpeedIndicatorItem_RightTapped(object sender, RightTappedRoutedEventArgs e) // Decreases time bewtween picks on right click 
         {
-            Speed -= 50;
-            SpeedNumberText.Text = Speed.ToString();
-            SpeedIndicatorItem.IsSelected = false;
-            Bindings.Update();
+            Thread Update = new Thread(SpeedUpdate);
+            Update.Start(1);
+        }
+        private void SpeedIndicatorItem_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            Thread Update = new Thread(SpeedUpdate);
+            Update.Start(0);
         }
 
         // Thunder Dome //
@@ -500,8 +497,8 @@ namespace Thunder_Dome_3._0
                             Bindings.Update(); // update any bindings(progressbars mostly)
                         });
                     }
-                    
-                    // List has been iterated through, wait a second 
+
+                    Thread.Sleep(1000);// List has been iterated through, wait a second 
 
                     if (RightItemGrid.Items.Count == 0) // If the up next grid is empty, return left list to normal and reroll
                     {
@@ -576,6 +573,36 @@ namespace Thunder_Dome_3._0
         }
 
         // Helper Functions //
+        public async void SpeedUpdate(object num)
+        {
+            int Num = (int)num;
+            if(Num == 0)
+            {
+                await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => // Call Shit needed from UI Thread
+                {
+                    if (Speed < 1000)
+                    {
+                        Speed += 50;
+                        SpeedNumberText.Text = Speed.ToString();
+                        SpeedIndicatorItem.IsSelected = false;
+                        Bindings.Update();
+                    }
+                });
+            }
+            else
+            {
+                if (Speed > 0)
+                {
+                    await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => // Call Shit needed from UI Thread
+                    {
+                        Speed -= 50;
+                        SpeedNumberText.Text = Speed.ToString();
+                        SpeedIndicatorItem.IsSelected = false;
+                        Bindings.Update();
+                    });
+                }
+            }
+        }
         public T FindDescendant<T>(DependencyObject obj) where T : DependencyObject // Finds a child from a parent object. Used to find objects in item grid 
         {
             // Check if this object is the specified type
@@ -610,23 +637,9 @@ namespace Thunder_Dome_3._0
             Thread.Sleep(300);
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                bool x = AddItemTextBox.Focus(FocusState.Keyboard);
-                if (x)
-                {
-
-                }
+                AddItemTextBox.Focus(FocusState.Keyboard);
             });
         }
-
-
-
-
-
-
-
-
-
-
 
 
     }

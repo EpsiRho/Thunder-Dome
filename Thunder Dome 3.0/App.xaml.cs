@@ -30,7 +30,6 @@ namespace Thunder_Dome_3._0
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            GlobalVars.FontSize = 32;
             GlobalVars.OnHoldItems = new List<Item>();
         }
 

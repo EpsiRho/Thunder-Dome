@@ -810,3 +810,4 @@ C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x64\Release\il
 C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x64\Release\ilc\intermediate\Thunder Dome 3.0.McgInterop\PInvoke.g.cs
 C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x64\Release\ilc\intermediate\Thunder Dome 3.0.McgInterop\SafeTypes.g.cs
 C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x64\Release\ilc\intermediate\Thunder Dome 3.0.McgInterop\SharedStubs.g.cs
+C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x64\Release\Thunder Dome 3.0.csprojAssemblyReference.cache

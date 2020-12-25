@@ -26,6 +26,9 @@
             <Button x:ConnectionId='3' x:Name="Reroll" Content="Reroll Dome" 
                     FontSize="42"                       
                     HorizontalAlignment="Center"/>
+            <Button x:ConnectionId='4' x:Name="Remove" Content="Remove Winning Item" Margin="0,10,0,0"
+                    FontSize="42"                        Visibility="Visible"
+                    HorizontalAlignment="Center"/>
             </StackPanel>
     </Grid>
 </Page>

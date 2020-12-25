@@ -7,11 +7,11 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="ThunderDome" Publisher="CN=jhset" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="ThunderDome" Publisher="CN=John Setta, O=John Setta, STREET=2098 Oak Dairy Ln SW, L=Huntsville, S=Alabama, PostalCode=35803, C=US" Version="1.0.0.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="1e73ef57-aac4-45ae-b6f4-b1c9a21eac2a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Thunder Dome 3.0</DisplayName>
-    <PublisherDisplayName>jhset</PublisherDisplayName>
+    <PublisherDisplayName>Epsi</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -26,8 +26,8 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="Thunder Dome 3.0.exe" EntryPoint="Thunder_Dome_3._0.App">
-      <uap:VisualElements DisplayName="Thunder Dome 3.0" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Thunder Dome 3.0" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
+      <uap:VisualElements DisplayName="Thunder Dome 3.0" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Thunder Dome 3.0" BackgroundColor="lightBlue">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png" />
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
     </Application>

@@ -42,7 +42,6 @@ C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x86\Debug\qual
 C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_637112822540000000.json
-C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x86\Debug\Thunder Dome 3.0.csprojAssemblyReference.cache
 C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x86\Debug\Microsoft.Toolkit.Uwp.UI.Controls\Microsoft.Toolkit.Uwp.UI.Controls.xr.xml
 C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x86\Debug\ColorCode.Core.dll
 C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x86\Debug\ColorCode.Core.pdb

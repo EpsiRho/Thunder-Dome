@@ -32,12 +32,12 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <Grid Background="{ThemeResource LeftBar}" >
-
-            <ListView x:ConnectionId='20' Grid.Column="0" x:Name="SpeedListShit" Width="50" Margin="0,0,0,0" VerticalAlignment="Top">
-                <ListViewItem x:ConnectionId='31' x:Name="SpeedIndicatorItem" Width="500" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="26,0,0,0"
-                                                                                                              >
+            <TextBlock Text="  v1.1.0"/>
+            <ListView x:ConnectionId='15' Grid.Column="0" x:Name="SpeedListShit" Width="50" Margin="0,0,0,0" VerticalAlignment="Bottom">
+                <ListViewItem x:ConnectionId='25' x:Name="SpeedIndicatorItem" Width="500" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                              Padding="26,0,0,0"                                                                                                                                >
                     <StackPanel Margin="0,0,0,0">
-                        <ProgressBar x:ConnectionId='32' x:Name="SpeedBar" Canvas.ZIndex="100"
+                        <ProgressBar x:ConnectionId='26' x:Name="SpeedBar" Canvas.ZIndex="100"
                          RenderTransformOrigin="0.5,0.5" 
                          Maximum="1000" 
                                                 
@@ -50,41 +50,35 @@
                                 <CompositeTransform Rotation="-90" />
                             </ProgressBar.RenderTransform>
                         </ProgressBar>
-                        <TextBlock x:ConnectionId='33' x:Name="SpeedNumberText" Margin="215,100,0,0"/>
+                        <TextBlock x:ConnectionId='27' x:Name="SpeedNumberText" Margin="215,100,0,0"/>
                         <SymbolIcon Symbol="Up" Width="25" Margin="125,10,0,0"/>
                         <TextBlock Text="Speed" Margin="205,0,0,0"/>
                     </StackPanel>
                 </ListViewItem>
             </ListView>
-            <ListView x:ConnectionId='21' x:Name="ActionList" Width="50" VerticalAlignment="Top" Margin="0,275,0,0">
-                <ListViewItem x:ConnectionId='22' x:Name="PlayPauseButton" Width="33"                           Margin="-1,0,0,2">
+            <ListView x:ConnectionId='16' x:Name="ActionList" Width="50" VerticalAlignment="Top" Margin="0,275,0,0">
+                <ListViewItem x:ConnectionId='17' x:Name="PlayPauseButton" Width="33"                           Margin="-1,0,0,2">
                     <StackPanel Padding="0,5,0,5">
-                        <SymbolIcon x:ConnectionId='29' Symbol="Play" Width="25" x:Name="PlayPauseIcon"/>
-                        <TextBlock x:ConnectionId='30' x:Name="PlayPauseText" Text="Start"/>
+                        <SymbolIcon x:ConnectionId='23' Symbol="Play" Width="25" x:Name="PlayPauseIcon"/>
+                        <TextBlock x:ConnectionId='24' x:Name="PlayPauseText" Text="Start"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem x:ConnectionId='23' x:Name="StopButton" Width="33"                            Margin="0,0,0,2" Visibility="Collapsed">
+                <ListViewItem x:ConnectionId='18' x:Name="StopButton" Width="33"                            Margin="0,0,0,2" Visibility="Collapsed">
                     <StackPanel Padding="0,5,0,5">
                         <SymbolIcon Symbol="Stop" Width="25"/>
                         <TextBlock Text="Stop"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem x:ConnectionId='24' x:Name="AddButton" Width="20"                           Margin="0,0,0,0" Visibility="Visible" Background="#00000000">
+                <ListViewItem x:ConnectionId='19' x:Name="AddButton" Width="20"                           Margin="0,0,0,0" Visibility="Visible" Background="#00000000">
                     <StackPanel Padding="0,7,0,5">
-                        <SymbolIcon x:ConnectionId='28' Symbol="Add" Width="25" x:Name="AddIcon"/>
+                        <SymbolIcon x:ConnectionId='22' Symbol="Add" Width="25" x:Name="AddIcon"/>
                         <TextBlock Text="Add"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem x:ConnectionId='25' x:Name="ChangeSize" Width="20"                                                                            Margin="0,0,0,0" Visibility="Visible">
+                <ListViewItem x:ConnectionId='20' x:Name="ShufflerButton" Width="20"                                Margin="-7,0,0,0">
                     <StackPanel Padding="0,7,0,5">
-                        <SymbolIcon Symbol="FontSize" Width="25" />
-                        <TextBlock Text="Size"/>
-                    </StackPanel>
-                </ListViewItem>
-                <ListViewItem x:ConnectionId='26' x:Name="TestButton" Width="20"                            Margin="-7,0,0,0">
-                    <StackPanel Padding="0,7,0,5">
-                        <SymbolIcon x:ConnectionId='27' Symbol="Repair" Width="25" x:Name="Debug"/>
-                        <TextBlock Text="Debug"/>
+                        <SymbolIcon x:ConnectionId='21' Symbol="Shuffle" Width="25" x:Name="Debug"/>
+                        <TextBlock Text="Shuffle"/>
                     </StackPanel>
                 </ListViewItem>
             </ListView>
@@ -94,11 +88,11 @@
                                                      IsItemClickEnabled="True"                                       >
             <GridView.ItemTemplate>
                 <DataTemplate                        >
-                    <StackPanel x:ConnectionId='16' Orientation="Horizontal" HorizontalAlignment="Left" Width="500">
+                    <StackPanel x:ConnectionId='12' Orientation="Horizontal" HorizontalAlignment="Left" Width="500">
                         <SymbolIcon Visibility="Collapsed" Symbol="Placeholder" Margin="5 0 5 5"/>
-                        <TextBlock x:ConnectionId='17'                      Margin="5 0 5 5"
+                        <TextBlock x:ConnectionId='13'                      Margin="5 0 5 5" FontSize="27"
                                    TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
-                        <ProgressBar x:ConnectionId='18' IsIndeterminate="False" Visibility="Visible" Maximum="100"                                        Width="100" Foreground="White"/>
+                        <ProgressBar x:ConnectionId='14' IsIndeterminate="False" Visibility="Visible" Maximum="100"                                        Width="100" Foreground="White"/>
                     </StackPanel>
                 </DataTemplate>
             </GridView.ItemTemplate>
@@ -116,7 +110,6 @@
                     <Setter Property="Background" Value="#2030E2DA"/>
                     <Setter Property="HorizontalContentAlignment" Value="Left"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
-                    <Setter x:ConnectionId='19' Property="FontSize"                              />
                 </Style>
             </GridView.ItemContainerStyle>
         </GridView>
@@ -124,11 +117,11 @@
                   Height="auto" IsItemClickEnabled="False" SelectionMode="None" Width="500">
             <GridView.ItemTemplate>
                 <DataTemplate                        >
-                    <StackPanel x:ConnectionId='11' Orientation="Horizontal" HorizontalAlignment="Left">
+                    <StackPanel x:ConnectionId='8' Orientation="Horizontal" HorizontalAlignment="Left">
                         <SymbolIcon Visibility="Collapsed" Symbol="Placeholder" Margin="5 0 5 5"/>
-                        <TextBlock x:ConnectionId='12'                      Margin="5 0 5 5"
+                        <TextBlock x:ConnectionId='9'                      Margin="5 0 5 5" FontSize="27"
                                    Width="auto" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
-                        <ProgressBar x:ConnectionId='13' IsIndeterminate="False" Visibility="Visible" Maximum="100"                           Width="100" Foreground="White"/>
+                        <ProgressBar x:ConnectionId='10' IsIndeterminate="False" Visibility="Visible" Maximum="100"                           Width="100" Foreground="White"/>
                     </StackPanel>
                 </DataTemplate>
             </GridView.ItemTemplate>
@@ -146,7 +139,6 @@
                     <Setter Property="Background" Value="#2030E2DA"/>
                     <Setter Property="HorizontalContentAlignment" Value="Left"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
-                    <Setter x:ConnectionId='14' Property="FontSize"                              />
                 </Style>
             </GridView.ItemContainerStyle>
         </GridView>
@@ -155,22 +147,9 @@
                                                           
                                PreferredPlacement="Right">
             <StackPanel Orientation="Horizontal">
-                <TextBox x:ConnectionId='8' x:Name="AddItemTextBox" Margin="0,0,10,0" MinWidth="200"                            />
-                <Button x:ConnectionId='9' x:Name="AddItemPopupButton"                                 >
+                <TextBox x:ConnectionId='5' x:Name="AddItemTextBox" Margin="0,0,10,0" MinWidth="200"                            />
+                <Button x:ConnectionId='6' x:Name="AddItemPopupButton"                                 >
                     <SymbolIcon Symbol="Accept"/>
-                </Button>
-            </StackPanel>
-        </controls1:TeachingTip>
-        <controls1:TeachingTip x:ConnectionId='5' x:Name="FontChangePopup"
-                               Title="Change font size"
-                                                           
-                               PreferredPlacement="Right">
-            <StackPanel Orientation="Horizontal">
-                <Button x:ConnectionId='6' x:Name="FontChangeButtonDown"                                   >
-                    <SymbolIcon Symbol="Remove"/>
-                </Button>
-                <Button x:ConnectionId='7' x:Name="FontChangeButtonUp"                                 >
-                    <SymbolIcon Symbol="Add"/>
                 </Button>
             </StackPanel>
         </controls1:TeachingTip>

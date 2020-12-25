@@ -9,7 +9,7 @@
   <Identity
     Name="ThunderDome"
     Publisher="CN=John Setta, O=John Setta, STREET=2098 Oak Dairy Ln SW, L=Huntsville, S=Alabama, PostalCode=35803, C=US"
-    Version="1.0.0.0" />
+    Version="1.1.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="1e73ef57-aac4-45ae-b6f4-b1c9a21eac2a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -37,7 +37,13 @@
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="Thunder Dome 3.0"
         BackgroundColor="lightBlue">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png"/>
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png" ShortName="Thunder Dome">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo"/>
+            <uap:ShowOn Tile="wide310x150Logo"/>
+            <uap:ShowOn Tile="square310x310Logo"/>
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile >
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
     </Application>

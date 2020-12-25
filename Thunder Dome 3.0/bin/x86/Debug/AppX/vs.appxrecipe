@@ -9,7 +9,7 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>1e73ef57-aac4-45ae-b6f4-b1c9a21eac2a</PackageIdentityName>
-    <PackageIdentityPublisher>CN=jhset</PackageIdentityPublisher>
+    <PackageIdentityPublisher>CN=John Setta, O=John Setta, STREET=2098 Oak Dairy Ln SW, L=Huntsville, S=Alabama, PostalCode=35803, C=US</PackageIdentityPublisher>
     <IntermediateOutputPath>C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
@@ -19,24 +19,24 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>F000CA468EDE9F91A64645897A9F67333B3A3059BA9634FB9DD4AC617686DA31</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>ThunderDome_1.0.0.0_x86__kt94dkm2aq6ra</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>ThunderDome_kt94dkm2aq6ra!App</RegisteredUserModeAppID>
+    <RegisteredManifestChecksum>787F0413209983D87C8082500EE9ED36446FD3DE3DDE4E69D59004EEEE890FEE</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>ThunderDome_1.0.0.0_x86__ac0w67xneh28g</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>ThunderDome_ac0w67xneh28g!App</RegisteredUserModeAppID>
     <RegisteredPackageID>ThunderDome</RegisteredPackageID>
-    <RegisteredPackagePublisher>CN=jhset</RegisteredPackagePublisher>
+    <RegisteredPackagePublisher>CN=John Setta, O=John Setta, STREET=2098 Oak Dairy Ln SW, L=Huntsville, S=Alabama, PostalCode=35803, C=US</RegisteredPackagePublisher>
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-25T06:48:53.946</Modified>
+      <Modified>2020-12-25T20:22:21.680</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x86\Debug\Thunder Dome 3.0.exe">
       <PackagePath>entrypoint\Thunder Dome 3.0.exe</PackagePath>
-      <Modified>2020-12-25T06:48:52.867</Modified>
+      <Modified>2020-12-25T20:22:20.513</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jhset\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll">
       <PackagePath>ColorCode.Core.dll</PackagePath>
@@ -106,9 +106,230 @@
       <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\Microsoft.Toolkit.Uwp.UI.Controls.xr.xml</PackagePath>
       <Modified>2020-08-13T03:07:10.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2020-12-24T02:35:11.317</Modified>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\LargeTile.scale-100.png">
+      <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.747</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\LargeTile.scale-125.png">
+      <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.786</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\LargeTile.scale-150.png">
+      <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.835</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\LargeTile.scale-200.png">
+      <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.908</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\LargeTile.scale-400.png">
+      <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:08:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\SmallTile.scale-100.png">
+      <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.267</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\SmallTile.scale-125.png">
+      <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.279</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\SmallTile.scale-150.png">
+      <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.293</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\SmallTile.scale-200.png">
+      <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.310</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\SmallTile.scale-400.png">
+      <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.338</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.444</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\SplashScreen.scale-125.png">
+      <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.495</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\SplashScreen.scale-150.png">
+      <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.563</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\SplashScreen.scale-400.png">
+      <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:32.007</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.354</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.374</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.396</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.498</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.347</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.358</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.406</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.370</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.380</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.279</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.336</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.300</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.311</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.scale-100.png">
+      <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.145</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.scale-125.png">
+      <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.155</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.scale-150.png">
+      <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.167</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.scale-400.png">
+      <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.199</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.212</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.222</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.269</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.232</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:31.243</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:32.018</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:32.029</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:32.041</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:32.054</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:32.075</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Wide310x150Logo.scale-100.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.519</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Wide310x150Logo.scale-125.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.542</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Wide310x150Logo.scale-150.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.570</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Wide310x150Logo.scale-400.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-12-25T07:01:30.714</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -117,48 +338,47 @@
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-11-17T23:42:28.795</Modified>
+      <Modified>2020-12-25T07:01:31.664</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-11-17T23:42:28.796</Modified>
+      <Modified>2020-12-25T07:01:30.426</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-11-17T23:42:28.796</Modified>
+      <Modified>2020-12-25T07:01:31.180</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-11-17T23:42:28.797</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\StoreLogo.png">
-      <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-11-17T23:42:28.798</Modified>
+      <Modified>2020-12-25T07:01:31.290</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-11-17T23:42:28.799</Modified>
+      <Modified>2020-12-25T07:01:30.612</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2020-12-24T02:35:11.317</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x86\Debug\Thunder Dome 3.0.xr.xml">
       <PackagePath>Thunder Dome 3.0.xr.xml</PackagePath>
-      <Modified>2020-12-25T06:45:51.242</Modified>
+      <Modified>2020-12-25T20:11:38.096</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-12-25T06:47:48.755</Modified>
+      <Modified>2020-12-25T20:20:35.471</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-12-25T06:47:48.754</Modified>
+      <Modified>2020-12-25T20:20:35.470</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x86\Debug\Winner.xbf">
       <PackagePath>Winner.xbf</PackagePath>
-      <Modified>2020-12-25T06:47:48.755</Modified>
+      <Modified>2020-12-25T20:20:35.471</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -174,11 +394,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-12-25T06:34:57.698</Modified>
+      <Modified>2020-12-25T19:53:13.792</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x86\Debug\Core\Thunder Dome 3.0.exe">
       <PackagePath>Thunder Dome 3.0.exe</PackagePath>
-      <Modified>2020-12-25T06:48:53.943</Modified>
+      <Modified>2020-12-25T20:22:21.676</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

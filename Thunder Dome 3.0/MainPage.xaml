@@ -32,10 +32,10 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <Grid Background="{ThemeResource LeftBar}" >
-
-            <ListView Grid.Column="0" x:Name="SpeedListShit" Width="50" Margin="0,0,0,0" VerticalAlignment="Top">
-                <ListViewItem x:Name="SpeedIndicatorItem" Width="500" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="26,0,0,0"
-                              Tapped="SpeedIndicatorItem_Tapped" RightTapped="SpeedIndicatorItem_RightTapped" >
+            <TextBlock Text="  v1.1.0"/>
+            <ListView Grid.Column="0" x:Name="SpeedListShit" Width="50" Margin="0,0,0,0" VerticalAlignment="Bottom">
+                <ListViewItem x:Name="SpeedIndicatorItem" Width="500" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                              Padding="26,0,0,0" RightTapped="SpeedIndicatorItem_RightTapped" Tapped="SpeedIndicatorItem_Tapped" DoubleTapped="SpeedIndicatorItem_DoubleTapped" >
                     <StackPanel Margin="0,0,0,0">
                         <ProgressBar x:Name="SpeedBar" Canvas.ZIndex="100"
                          RenderTransformOrigin="0.5,0.5" 
@@ -75,16 +75,10 @@
                         <TextBlock Text="Add"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem x:Name="ChangeSize" Width="20" Tapped="FontChangeButtonDown_Click" RightTapped="FontChangeButtonUp_Click" Margin="0,0,0,0" Visibility="Visible">
+                <ListViewItem x:Name="ShufflerButton" Width="20" Tapped="ShufflerButton_Tapped" Margin="-7,0,0,0">
                     <StackPanel Padding="0,7,0,5">
-                        <SymbolIcon Symbol="FontSize" Width="25" />
-                        <TextBlock Text="Size"/>
-                    </StackPanel>
-                </ListViewItem>
-                <ListViewItem x:Name="TestButton" Width="20" Tapped="TestButton_Tapped" Margin="-7,0,0,0">
-                    <StackPanel Padding="0,7,0,5">
-                        <SymbolIcon Symbol="Repair" Width="25" x:Name="Debug"/>
-                        <TextBlock Text="Debug"/>
+                        <SymbolIcon Symbol="Shuffle" Width="25" x:Name="Debug"/>
+                        <TextBlock Text="Shuffle"/>
                     </StackPanel>
                 </ListViewItem>
             </ListView>
@@ -96,7 +90,7 @@
                 <DataTemplate x:DataType="local:Item">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="500">
                         <SymbolIcon Visibility="Collapsed" Symbol="Placeholder" Margin="5 0 5 5"/>
-                        <TextBlock Text="{x:Bind Name}" Margin="5 0 5 5"
+                        <TextBlock Text="{x:Bind Name}" Margin="5 0 5 5" FontSize="27"
                                    TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
                         <ProgressBar IsIndeterminate="False" Visibility="Visible" Maximum="100" Value="{x:Bind Progress, Mode=OneWay}" Width="100" Foreground="White"/>
                     </StackPanel>
@@ -116,7 +110,6 @@
                     <Setter Property="Background" Value="#2030E2DA"/>
                     <Setter Property="HorizontalContentAlignment" Value="Left"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
-                    <Setter Property="FontSize" Value="{x:Bind MainFontSize}"/>
                 </Style>
             </GridView.ItemContainerStyle>
         </GridView>
@@ -126,7 +119,7 @@
                 <DataTemplate x:DataType="local:Item">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <SymbolIcon Visibility="Collapsed" Symbol="Placeholder" Margin="5 0 5 5"/>
-                        <TextBlock Text="{x:Bind Name}" Margin="5 0 5 5"
+                        <TextBlock Text="{x:Bind Name}" Margin="5 0 5 5" FontSize="27"
                                    Width="auto" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
                         <ProgressBar IsIndeterminate="False" Visibility="Visible" Maximum="100" Value="{x:Bind Progress}" Width="100" Foreground="White"/>
                     </StackPanel>
@@ -146,7 +139,6 @@
                     <Setter Property="Background" Value="#2030E2DA"/>
                     <Setter Property="HorizontalContentAlignment" Value="Left"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
-                    <Setter Property="FontSize" Value="{x:Bind MainFontSize}"/>
                 </Style>
             </GridView.ItemContainerStyle>
         </GridView>
@@ -158,19 +150,6 @@
                 <TextBox x:Name="AddItemTextBox" Margin="0,0,10,0" MinWidth="200" KeyDown="AddButton_KeyDown"/>
                 <Button x:Name="AddItemPopupButton" Click="AddItemPopupButton_Click">
                     <SymbolIcon Symbol="Accept"/>
-                </Button>
-            </StackPanel>
-        </controls1:TeachingTip>
-        <controls1:TeachingTip x:Name="FontChangePopup"
-                               Title="Change font size"
-                               Target="{x:Bind ChangeSize}"
-                               PreferredPlacement="Right">
-            <StackPanel Orientation="Horizontal">
-                <Button x:Name="FontChangeButtonDown" Click="FontChangeButtonDown_Click">
-                    <SymbolIcon Symbol="Remove"/>
-                </Button>
-                <Button x:Name="FontChangeButtonUp" Click="FontChangeButtonUp_Click">
-                    <SymbolIcon Symbol="Add"/>
                 </Button>
             </StackPanel>
         </controls1:TeachingTip>
