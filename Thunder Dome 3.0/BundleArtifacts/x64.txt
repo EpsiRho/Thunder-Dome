@@ -1,6 +1,0 @@
-MainPackage=C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x64\Release\Thunder Dome 3.0_1.1.0.0_x64.msix
-SymbolPackage=C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x64\Release\Symbols\Thunder Dome 3.0_1.1.0.0_x64.appxsym
-ResourcePack=C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x64\Release\Thunder Dome 3.0_1.1.0.0_scale-100.msix
-ResourcePack=C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x64\Release\Thunder Dome 3.0_1.1.0.0_scale-125.msix
-ResourcePack=C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x64\Release\Thunder Dome 3.0_1.1.0.0_scale-150.msix
-ResourcePack=C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\bin\x64\Release\Thunder Dome 3.0_1.1.0.0_scale-400.msix

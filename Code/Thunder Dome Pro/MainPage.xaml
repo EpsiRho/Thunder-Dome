@@ -1,0 +1,706 @@
+﻿<Page x:Class="Thunder_Dome_Pro.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Thunder_Dome_Pro"
+      xmlns:classes="using:Thunder_Dome_Pro.Classes"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:muxc="using:Microsoft.UI.Xaml.Controls" 
+      xmlns:media="using:Windows.UI.Xaml.Media"
+      mc:Ignorable="d"
+      xmlns:animations="using:Microsoft.Toolkit.Uwp.UI.Animations"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style x:Key="MoviesListView" TargetType="ListView">
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="TabNavigation" Value="Once"/>
+            <Setter Property="IsSwipeEnabled" Value="True"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.HorizontalScrollMode" Value="Disabled"/>
+            <Setter Property="ScrollViewer.IsHorizontalRailEnabled" Value="False"/>
+            <Setter Property="ScrollViewer.VerticalScrollMode" Value="Enabled"/>
+            <Setter Property="ScrollViewer.IsVerticalRailEnabled" Value="True"/>
+            <Setter Property="ScrollViewer.ZoomMode" Value="Disabled"/>
+            <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="False"/>
+            <Setter Property="ScrollViewer.BringIntoViewOnFocusChange" Value="True"/>
+            <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}"/>
+            <Setter Property="ItemContainerTransitions">
+                <Setter.Value>
+                    <TransitionCollection>
+                        <AddDeleteThemeTransition/>
+                        <ContentThemeTransition/>
+                        <ReorderThemeTransition/>
+                        <EntranceThemeTransition IsStaggeringEnabled="False"/>
+                    </TransitionCollection>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <ItemsStackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListView">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="{TemplateBinding CornerRadius}">
+                            <ScrollViewer x:Name="ScrollViewer" 
+                                          AutomationProperties.AccessibilityView="Raw" 
+                                          BringIntoViewOnFocusChange="{TemplateBinding ScrollViewer.BringIntoViewOnFocusChange}" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}" IsDeferredScrollingEnabled="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}" IsVerticalRailEnabled="{TemplateBinding ScrollViewer.IsVerticalRailEnabled}" IsHorizontalRailEnabled="{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}" IsHorizontalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsHorizontalScrollChainingEnabled}" IsVerticalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsVerticalScrollChainingEnabled}" TabNavigation="{TemplateBinding TabNavigation}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}" ZoomMode="{TemplateBinding ScrollViewer.ZoomMode}">
+                                <ItemsPresenter Footer="{TemplateBinding Footer}" 
+                                                FooterTemplate="{TemplateBinding FooterTemplate}"
+                                                FooterTransitions="{TemplateBinding FooterTransitions}" 
+                                                HeaderTemplate="{TemplateBinding HeaderTemplate}"
+                                                HeaderTransitions="{TemplateBinding HeaderTransitions}" Header="{TemplateBinding Header}" Padding="{TemplateBinding Padding}"/>
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ListViewItemContainerStyle1" TargetType="ListViewItem">
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="Background" Value="{ThemeResource ListViewItemBackground}"/>
+            <Setter Property="Foreground" Value="{ThemeResource ListViewItemForeground}"/>
+            <Setter Property="TabNavigation" Value="Local"/>
+            <Setter Property="IsHoldingEnabled" Value="True"/>
+            <Setter Property="Padding" Value="12,0,12,0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="MinWidth" Value="{ThemeResource ListViewItemMinWidth}"/>
+            <Setter Property="MinHeight" Value="{ThemeResource ListViewItemMinHeight}"/>
+            <Setter Property="AllowDrop" Value="False"/>
+            <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}"/>
+            <Setter Property="FocusVisualMargin" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <ListViewItemPresenter x:Name="Root" 
+                                               CheckMode="{ThemeResource ListViewItemCheckMode}" 
+                                               CheckBoxBrush="{ThemeResource ListViewItemCheckBoxBrush}" 
+                                               CheckBrush="{ThemeResource ListViewItemCheckBrush}" 
+                                               ContentMargin="{TemplateBinding Padding}" 
+                                               ContentTransitions="{TemplateBinding ContentTransitions}" 
+                                               DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}" 
+                                               DragBackground="{ThemeResource ListViewItemDragBackground}"
+                                               DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}" 
+                                               DragForeground="{ThemeResource ListViewItemDragForeground}"
+                                               FocusVisualMargin="{TemplateBinding FocusVisualMargin}" 
+                                               FocusBorderBrush="{ThemeResource ListViewItemFocusBorderBrush}" 
+                                               FocusSecondaryBorderBrush="{ThemeResource ListViewItemFocusSecondaryBorderBrush}" 
+                                               HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                               Control.IsTemplateFocusTarget="True" 
+                                               PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackground}" 
+                                               PointerOverBackground="{ThemeResource ListViewItemBackgroundPointerOver}" 
+                                               PointerOverForeground="{ThemeResource ListViewItemForegroundPointerOver}" 
+                                               PressedBackground="{ThemeResource ListViewItemBackgroundPressed}" 
+                                               RevealBorderThickness="{ThemeResource ListViewItemRevealBorderThemeThickness}" 
+                                               RevealBackground="{ThemeResource ListViewItemRevealBackground}" 
+                                               RevealBorderBrush="{ThemeResource ListViewItemRevealBorderBrush}" 
+                                               ReorderHintOffset="{ThemeResource ListViewItemReorderHintThemeOffset}" 
+                                               SelectedForeground="White" 
+                                               SelectedPointerOverBackground="#212121" 
+                                               SelectionCheckMarkVisualEnabled="{ThemeResource ListViewItemSelectionCheckMarkVisualEnabled}" 
+                                               SelectedBackground="#1e1e1e" 
+                                               SelectedPressedBackground="{ThemeResource ListViewItemBackgroundSelectedPressed}" 
+                                               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Selected"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <VisualState.Setters>
+                                            <Setter Target="Root.(RevealBrush.State)" Value="PointerOver"/>
+                                            <Setter Target="Root.RevealBorderBrush" Value="{ThemeResource ListViewItemRevealBorderBrushPointerOver}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerOverSelected">
+                                        <VisualState.Setters>
+                                            <Setter Target="Root.(RevealBrush.State)" Value="PointerOver"/>
+                                            <Setter Target="Root.RevealBorderBrush" Value="{ThemeResource ListViewItemRevealBorderBrushPointerOver}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerOverPressed">
+                                        <VisualState.Setters>
+                                            <Setter Target="Root.(RevealBrush.State)" Value="Pressed"/>
+                                            <Setter Target="Root.RevealBorderBrush" Value="{ThemeResource ListViewItemRevealBorderBrushPressed}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Target="Root.(RevealBrush.State)" Value="Pressed"/>
+                                            <Setter Target="Root.RevealBorderBrush" Value="{ThemeResource ListViewItemRevealBorderBrushPressed}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="PressedSelected">
+                                        <VisualState.Setters>
+                                            <Setter Target="Root.(RevealBrush.State)" Value="Pressed"/>
+                                            <Setter Target="Root.RevealBorderBrush" 
+                                                    Value="{ThemeResource ListViewItemRevealBorderBrushPressed}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="DisabledStates">
+                                    <VisualState x:Name="Enabled"/>
+                                    <VisualState x:Name="Disabled">
+                                        <VisualState.Setters>
+                                            <Setter Target="Root.RevealBorderThickness" Value="0"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ListViewItemPresenter>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="#101010">
+        <Grid.Resources>
+            <Storyboard x:Name="ButtonPanelStoryBoardEnter">
+                <DoubleAnimation From="250" To="0" Duration="00:00:0.15" 
+                                 Storyboard.TargetName="ButtonPanelTransform" 
+                                 Storyboard.TargetProperty="X"/>
+            </Storyboard>
+            <Storyboard x:Name="ButtonPanelStoryBoardExit">
+                <DoubleAnimation From="0" To="250" Duration="00:00:0.3" 
+                                 Storyboard.TargetName="ButtonPanelTransform" 
+                                 Storyboard.TargetProperty="X"/>
+            </Storyboard>
+            <Storyboard x:Name="SettingsOpen">
+                <DoubleAnimation From="0" To="500" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="SettingsGrid" 
+                                 Storyboard.TargetProperty="Height"
+                                 EnableDependentAnimation="true"/>
+                <DoubleAnimation From="0" To="1" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="SettingsGrid" 
+                                 Storyboard.TargetProperty="Opacity"
+                                 EnableDependentAnimation="true"/>
+                <DoubleAnimation From="0" To="1" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="OverlayGrid" 
+                                 Storyboard.TargetProperty="Opacity"
+                                 EnableDependentAnimation="true"/>
+                <DoubleAnimation From="0" To="1" Duration="00:00:0.01" 
+                                 Storyboard.TargetName="OverlayTransform" 
+                                 Storyboard.TargetProperty="ScaleX"
+                                 EnableDependentAnimation="true"/>
+                <DoubleAnimation From="0" To="1" Duration="00:00:0.01" 
+                                 Storyboard.TargetName="OverlayTransform" 
+                                 Storyboard.TargetProperty="ScaleY"
+                                 EnableDependentAnimation="true"/>
+            </Storyboard>
+            <Storyboard x:Name="SettingsClose">
+                <DoubleAnimation From="500" To="0" Duration="00:00:0.2" 
+                                 Storyboard.TargetName="SettingsGrid" 
+                                 Storyboard.TargetProperty="Height"
+                                 EnableDependentAnimation="true"/>
+                <DoubleAnimation From="1" To="0" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="SettingsGrid" 
+                                 Storyboard.TargetProperty="Opacity"
+                                 EnableDependentAnimation="true"/>
+                <DoubleAnimation From="1" To="0" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="OverlayGrid" 
+                                 Storyboard.TargetProperty="Opacity"
+                                 EnableDependentAnimation="true"/>
+                <DoubleAnimation From="1" To="0" Duration="00:00:0.01" 
+                                 Storyboard.TargetName="OverlayTransform" 
+                                 Storyboard.TargetProperty="ScaleX"
+                                 EnableDependentAnimation="true"/>
+                <DoubleAnimation From="1" To="0" Duration="00:00:0.01" 
+                                 Storyboard.TargetName="OverlayTransform" 
+                                 Storyboard.TargetProperty="ScaleY"
+                                 EnableDependentAnimation="true"/>
+            </Storyboard>
+            <Storyboard x:Name="WinningOpenHalf">
+                <DoubleAnimation From="0" To="1" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="LoadingTransform" 
+                                 Storyboard.TargetProperty="ScaleX"/>
+                <DoubleAnimation From="0" To="1" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="LoadingTransform" 
+                                 Storyboard.TargetProperty="ScaleY"/>
+            </Storyboard>
+            <Storyboard x:Name="WinningOpenFull">
+                <DoubleAnimation From="0" To="1" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="WinningTransform" 
+                                 Storyboard.TargetProperty="ScaleX"/>
+                <DoubleAnimation From="0" To="1" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="WinningTransform" 
+                                 Storyboard.TargetProperty="ScaleY"/>
+            </Storyboard>
+            <Storyboard x:Name="WinningClosing">
+                <DoubleAnimation From="1" To="0" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="LoadingTransform" 
+                                 Storyboard.TargetProperty="ScaleX"/>
+                <DoubleAnimation From="1" To="0" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="LoadingTransform" 
+                                 Storyboard.TargetProperty="ScaleY"/>
+                <DoubleAnimation From="1" To="0" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="WinningTransform" 
+                                 Storyboard.TargetProperty="ScaleX"/>
+                <DoubleAnimation From="1" To="0" Duration="00:00:0.1" 
+                                 Storyboard.TargetName="WinningTransform" 
+                                 Storyboard.TargetProperty="ScaleY"/>
+            </Storyboard>
+            <Storyboard x:Name="RoundTextOpen">
+                <DoubleAnimation From="-200" To="0" Duration="00:00:0.3" 
+                                 Storyboard.TargetName="RoundTitleTransformation" 
+                                 Storyboard.TargetProperty="X"/>
+                <DoubleAnimation From="-200" To="0" Duration="00:00:0.4" 
+                                 Storyboard.TargetName="TitleBars" 
+                                 Storyboard.TargetProperty="X"/>
+            </Storyboard>
+            <Storyboard x:Name="RoundTextClose">
+                <DoubleAnimation From="0" To="-200" Duration="00:00:0.3" 
+                                 Storyboard.TargetName="RoundTitleTransformation" 
+                                 Storyboard.TargetProperty="X"/>
+                <DoubleAnimation From="0" To="-200" Duration="00:00:0.4" 
+                                 Storyboard.TargetName="TitleBars" 
+                                 Storyboard.TargetProperty="X"/>
+            </Storyboard>
+        </Grid.Resources>
+
+        <Grid Background="#DA101010"
+              Canvas.ZIndex="7"
+              x:Name="OverlayGrid"
+              Opacity="0"
+              RenderTransformOrigin="0.5,0.5"
+              Tapped="OverlayGrid_Tapped">
+            <Grid.RenderTransform>
+                <ScaleTransform x:Name="OverlayTransform"
+                                ScaleX="0"
+                                ScaleY="0"/>
+            </Grid.RenderTransform>
+        </Grid>
+
+        <StackPanel x:Name="SettingsGrid"
+                    Background="#202020"
+                    Canvas.ZIndex="9"
+                    CornerRadius="10"
+                    MaxWidth="650"
+                    Height="0">
+            <StackPanel.RenderTransform>
+                <ScaleTransform x:Name="SettingsTransform"
+                                ScaleX="1"/>
+            </StackPanel.RenderTransform>
+            <ScrollViewer Height="500">
+                <StackPanel>
+                    <TextBlock Text="v4.1.1.0"
+                               FontSize="12"
+                               HorizontalAlignment="Right"
+                               Margin="10,10,10,10"/>
+                    <TextBlock Text="Settings"
+                               FontSize="30"
+                               Margin="10"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Default List"
+                               FontSize="20"
+                               Margin="10"
+                               HorizontalAlignment="Center"/>
+                    <ComboBox ItemsSource="{x:Bind listsListViewModel.Lists}"
+                              HorizontalAlignment="Center"
+                              SelectionChanged="DefaultListSelection_SelectionChanged"
+                              x:Name="DefaultListSelection"/>
+                    <TextBlock Text="Selection Speed"
+                               FontSize="20"
+                               Margin="10"
+                               HorizontalAlignment="Center"/>
+                    <Slider Width="300"
+                            x:Name="SpeedSlider"
+                            Minimum="100"
+                            Maximum="1000"
+                            ValueChanged="SpeedSlider_ValueChanged"
+                            TickFrequency="10"
+                            SnapsTo="Ticks"
+                            TickPlacement="None"
+                            Value="500"/>
+                    <TextBlock Text="Elimination Weight"
+                               FontSize="20"
+                               Margin="10"
+                               HorizontalAlignment="Center"/>
+                    <Slider Width="300"
+                            x:Name="WeightSlider"
+                            Minimum="0.0"
+                            Maximum="1.0"
+                            ValueChanged="WeightSlider_ValueChanged"
+                            TickFrequency="0.1"
+                            SnapsTo="Ticks"
+                            StepFrequency="0.1"
+                            TickPlacement="None"
+                            Value="500"/>
+                    <CheckBox x:Name="FullElimCheck" 
+                              FontSize="18"
+                              HorizontalAlignment="Center"
+                              Click="FullElimCheck_Click"
+                              IsChecked="true"
+                              Content="Allow for Full Elimination Rounds"/>
+                    <TextBlock Text="(This setting makes time between rounds much longer)"
+                               FontSize="12"
+                               Margin="0,-6,0,0"
+                               HorizontalAlignment="Center"/>
+                    <CheckBox x:Name="EnableSuspense" 
+                              FontSize="18"
+                              IsChecked="true"
+                              Click="EnableSuspense_Click"
+                              HorizontalAlignment="Center"
+                              Content="Enable pauses for UI catchups and suspense"/>
+                    <CheckBox x:Name="ElimAnimationCheck" 
+                              FontSize="18"
+                              IsChecked="true"
+                              Click="ElimAnimationCheck_Click"
+                              HorizontalAlignment="Center"
+                              Content="Enable Elimination Animation"/>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+
+        <Border CornerRadius="10,0,0,10"
+                Background="#3d3d3d"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Width="30"
+                Canvas.ZIndex="10"
+                Height="80"
+                Margin="20,20,0,20"
+                PointerPressed="Border_PointerPressed"/>
+
+        <muxc:TeachingTip x:Name="SelectListPopup"
+                          Target="{x:Bind ListButton}"
+                          Title="Lists"
+                          PreferredPlacement="Top">
+            <muxc:TeachingTip.Content>
+                <ListView x:Name="ListsList"
+                          Margin="0,10,0,0"
+                          IsItemClickEnabled="True"
+                          ItemClick="ListsList_ItemClick"
+                          ItemsSource="{x:Bind listsListViewModel.Lists}"/>
+            </muxc:TeachingTip.Content>
+        </muxc:TeachingTip>
+
+        <muxc:TeachingTip x:Name="AddNewPopup"
+                          Target="{x:Bind AddButon}"
+                          Title="Lists"
+                          ActionButtonClick="AddNewPopup_ActionButtonClick"
+	                      ActionButtonContent="Add Item"
+	                      CloseButtonContent="Add List"
+                          CloseButtonClick="AddNewPopup_CloseButtonClick"
+                          PreferredPlacement="Top">
+        </muxc:TeachingTip>
+
+        <Grid CornerRadius="10,0,0,10"
+              Background="#3d3d3d"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Bottom"
+              Width="250"
+              Height="80"
+              Canvas.ZIndex="11"
+              Margin="20,20,10,20"
+              PointerPressed="Border_PointerPressed">
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="ButtonPanelTransform"
+                                    X="250"/>
+            </Grid.RenderTransform>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <Button Margin="0,0,0,0"
+                        x:Name="PlayButton"
+                        IsEnabled="False"
+                        Click="PlayButton_Click"
+                        ToolTipService.ToolTip="Start THE DOME">
+                    <SymbolIcon Symbol="Play"/>
+                </Button>
+                <Button Margin="10,0,0,0"
+                        x:Name="AddButon"
+                        IsEnabled="False"
+                        Click="AddButon_Click"
+                        ToolTipService.ToolTip="Create New List">
+                    <SymbolIcon Symbol="Add"/>
+                </Button>
+                <Button Margin="10,0,0,0"
+                        x:Name="ListButton"
+                        Click="ListButton_Click"
+                        ToolTipService.ToolTip="Open a List">
+                    <SymbolIcon Symbol="List"/>
+                </Button>
+                <Button Margin="10,0,0,0"
+                        x:Name="Settings"
+                        Click="Settings_Click"
+                        ToolTipService.ToolTip="App Settings">
+                    <SymbolIcon Symbol="Setting"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid Width="50"
+              Height="50"
+              Background="#101010"
+              Canvas.ZIndex="7">
+            <Grid.RenderTransform>
+                <ScaleTransform x:Name="LoadingTransform"
+                                ScaleX="0"
+                                ScaleY="0"/>
+            </Grid.RenderTransform>
+            <muxc:ProgressRing IsIndeterminate="True"
+                               IsActive="True"
+                               Width="50"
+                               Height="50"/>
+        </Grid>
+        
+        <Grid Background="#202020"
+              Canvas.ZIndex="8"
+              Margin="80"
+              CornerRadius="10"
+              x:Name="WinningPanel">
+            <Grid.RenderTransform>
+                <ScaleTransform x:Name="WinningTransform"
+                                ScaleX="0"
+                                ScaleY="0"/>
+            </Grid.RenderTransform>
+
+            <Button x:Name="CloseWinningPanelButton"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Click="CloseWinningPanelButton_Click"
+                    Margin="20">
+                <SymbolIcon Symbol="Refresh" />
+            </Button>
+            <Image Height="400"
+                   x:Name="WinningPoster"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="20"/>
+            <TextBlock x:Name="WinningTitle"
+                       Text=""
+                       FontSize="32"
+                       HorizontalAlignment="Left"
+                       TextTrimming="CharacterEllipsis"
+                       Margin="300,10,80,0"/>
+            <TextBlock x:Name="WinningDesc"
+                       Text=""
+                       FontSize="18"
+                       HorizontalAlignment="Left"
+                       MaxWidth="500"
+                       TextWrapping="Wrap"
+                       Margin="300,60,0,0"/>
+
+            <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" 
+                      Glyph="&#xE734;" 
+                      FontSize="20"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="20,423,0,0"/>
+            <TextBlock x:Name="WinningRating"
+                       Text="6.7/10"
+                       FontSize="20"
+                       HorizontalAlignment="Left"
+                       Margin="45,420,0,0"/>
+            <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" 
+                      Glyph="&#xE787;" 
+                      FontSize="20"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="160,425,0,0"/>
+            <TextBlock x:Name="WinningReleaseDate"
+                       Text="2008-07-29"
+                       FontSize="20"
+                       HorizontalAlignment="Left"
+                       Margin="190,420,0,0"/>
+            <GridView SelectionMode="None"
+                      HorizontalAlignment="Left"
+                      Margin="20,0,0,0"
+                      ItemClick="PirateButton_ItemClick"
+                      IsItemClickEnabled="True"
+                      VerticalAlignment="Bottom">
+                <GridViewItem>
+                    <Image Source="https://torrindex.net/images/tpb.jpg"
+                           Height="80"/>
+                </GridViewItem>
+            </GridView>
+            <GridView ItemsSource="{x:Bind providersViewModel.Items}"
+                      SelectionMode="None"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Bottom"
+                      Margin="100,0,0,0">
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="classes:Flatrate">
+                        <Grid>
+                            <Image Source="{x:Bind logo_path}"
+                                   Height="80"/>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </Grid>
+
+        <Border Canvas.ZIndex="2"
+                Background="#101010"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+            <TextBlock Text="[N/A]"
+                   x:Name="ListTitle"
+                   FontSize="32"
+                   TextDecorations="Underline"
+                   Margin="10,0,5,5"/>
+        </Border>
+
+        <TextBlock Text="||"
+                   FontSize="32"
+                   Margin="170,-3,0,0">
+            <TextBlock.RenderTransform>
+                <TranslateTransform X="-200"
+                                    x:Name="TitleBars"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock Text="Round 1"
+                   x:Name="RoundTitle"
+                   FontSize="32"
+                   TextDecorations="Underline"
+                   Margin="200,0,0,0">
+            <TextBlock.RenderTransform>
+                <TranslateTransform X="-200"
+                                    x:Name="RoundTitleTransformation"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+        <GridView Margin="20,50,0,10"
+                  ItemsSource="{x:Bind itemsViewModel.Items}"
+                  IsItemClickEnabled="True"
+                  animations:ItemsReorderAnimation.Duration="00:00:00.2"
+                  ItemClick="ItemGridView_ItemClick">
+            <GridView.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Default">
+                            <AcrylicBrush x:Key="EliminatedBrush"
+                                          BackgroundSource="Backdrop"
+                                          TintColor="#880000"
+                                          TintOpacity="0.5" 
+                                          TintLuminosityOpacity="0.4"
+                                          Opacity="0.97"
+                                          FallbackColor="#880000"/>
+                            <AcrylicBrush x:Key="SelectedBrush"
+                                          BackgroundSource="Backdrop"
+                                          TintColor="#55b155"
+                                          TintOpacity="0.5" 
+                                          TintLuminosityOpacity="0.4"
+                                          Opacity="0.67"
+                                          FallbackColor="#55b155"/>
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </GridView.Resources>
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="classes:Item">
+                    <Grid Height="230"
+                          RightTapped="ItemGrid_RightTapped">
+                        <Grid.ContextFlyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem Text="{x:Bind HoldStatus, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Click="HoldFlyoutItem_Click" />
+                                <MenuFlyoutItem Text="Remove" Click="RemoveFlyoutItem_Click" />
+                            </MenuFlyout>
+                        </Grid.ContextFlyout>
+                        <TextBlock Text="{x:Bind Name}"
+                                   Foreground="White"
+                                   FontSize="18"
+                                   Margin="0,0,0,15"
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   TextWrapping="Wrap"/>
+                        <Rectangle Fill="{ThemeResource EliminatedBrush}"
+                                   Canvas.ZIndex="5"
+                                   Visibility="{x:Bind ShowElim, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                   Margin="0,0,0,30"/>
+                        <Rectangle Fill="{ThemeResource SelectedBrush}"
+                                   Canvas.ZIndex="5"
+                                   Visibility="{x:Bind ShowSel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                   Margin="0,0,0,30"/>
+                        <Image Height="200"
+                               Source="{x:Bind PosterLink}"
+                               VerticalAlignment="Top"/>
+                        <ProgressBar Maximum="3"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Bottom"
+                                     Width="50"
+                                     Height="6"
+                                     Value="{x:Bind Shield, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                     Background="#2e2e2e"
+                                     Foreground="White"
+                                     Margin="10,10,10,12"/>
+                        <SymbolIcon Symbol="Cancel"
+                                    VerticalAlignment="Bottom"
+                                    Margin="5"
+                                    Foreground="{x:Bind IsHeld, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                    HorizontalAlignment="Right"/>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+        <ContentDialog Title="Create new list"
+                       x:Name="NewListDialog"
+                       PrimaryButtonText="Create"
+                       PrimaryButtonClick="NewListDialog_PrimaryButtonClick"
+                       CloseButtonText="Cancel">
+            <StackPanel>
+                <TextBlock Text="List Name"
+                           FontSize="18"/>
+                <TextBox x:Name="ListNameEntry"/>
+            </StackPanel>
+        </ContentDialog>
+
+        <ContentDialog Title="Add new items"
+                       x:Name="NewItemsDialog"
+                       PrimaryButtonText="Add"
+                       IsPrimaryButtonEnabled="False"
+                       PrimaryButtonClick="NewItemsDialog_PrimaryButtonClick"
+                       CloseButtonText="Cancel">
+            <StackPanel>
+                <TextBlock Text="Movie Search"
+                           FontSize="18"/>
+                <TextBox x:Name="NewItemEntry"
+                         TextChanged="NewItemEntry_TextChanged"/>
+                <muxc:ProgressBar x:Name="SearchProgress"
+                                  IsIndeterminate="True"
+                                  Visibility="Collapsed"
+                                  Foreground="White"/>
+                <ListView ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" 
+                          Style="{StaticResource MoviesListView}" 
+                          x:Name="MoviesListView"
+                          ItemClick="MoviesListView_ItemClick"
+                          IsItemClickEnabled="True"
+                          MaxHeight="500"
+                          Margin="0,10,0,0"
+                          ScrollViewer.VerticalScrollMode="Enabled"
+                          ItemsSource="{x:Bind searchViewModel.Items}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="classes:Result">
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,5,0,5">
+                                <Image Source="{x:Bind full_poster_path}"
+                                       Height="100"
+                                       Margin="0,0,10,0"/>
+                                <StackPanel>
+                                    <TextBlock Text="{x:Bind title}"
+                                               FontSize="18"/>
+                                    <TextBlock Text="{x:Bind overview}"
+                                               FontSize="18"
+                                               Foreground="#808080"
+                                               MaxWidth="360"
+                                               Height="80"
+                                               TextTrimming="CharacterEllipsis"
+                                               TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </ContentDialog>
+    </Grid>
+</Page>

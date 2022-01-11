@@ -1,6 +1,0 @@
-﻿[ResourceMetadata]
-"ResourceId"			"split.language-ko"
-"ResourceDimensions"		"language-ko-kr"
-
-[Files]
-"C:\Users\jhset\source\repos\Thunder Dome 3.0\Thunder Dome 3.0\obj\x64\Release\split.language-ko.pri"			"resources.pri"
