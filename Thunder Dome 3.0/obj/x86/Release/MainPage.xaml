@@ -1,0 +1,158 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="Thunder_Dome_3._0.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Thunder_Dome_3._0"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:controls1="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                    <AcrylicBrush x:Key="LeftBar"
+                          BackgroundSource="HostBackdrop"
+                          TintOpacity="0.4" 
+                          FallbackColor="#CC00DCFF" TintColor="#CC00DCFF"/>
+                    <AcrylicBrush x:Key="ItemPanel"
+                          BackgroundSource="HostBackdrop"
+                          TintOpacity="0.8" 
+                          FallbackColor="Black" TintColor="Black"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ItemPanel}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="{ThemeResource LeftBar}" >
+            <TextBlock Text="  v1.1.0"/>
+            <ListView x:ConnectionId='15' Grid.Column="0" x:Name="SpeedListShit" Width="50" Margin="0,0,0,0" VerticalAlignment="Bottom">
+                <ListViewItem x:ConnectionId='25' x:Name="SpeedIndicatorItem" Width="500" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                              Padding="26,0,0,0"                                                                                                                                >
+                    <StackPanel Margin="0,0,0,0">
+                        <ProgressBar x:ConnectionId='26' x:Name="SpeedBar" Canvas.ZIndex="100"
+                         RenderTransformOrigin="0.5,0.5" 
+                         Maximum="1000" 
+                                                
+                         Width="200" 
+                         Margin="125,103,0,0"            
+                         Foreground="White"
+                         VerticalAlignment="Top" 
+                         HorizontalAlignment="Center">
+                            <ProgressBar.RenderTransform>
+                                <CompositeTransform Rotation="-90" />
+                            </ProgressBar.RenderTransform>
+                        </ProgressBar>
+                        <TextBlock x:ConnectionId='27' x:Name="SpeedNumberText" Margin="215,100,0,0"/>
+                        <SymbolIcon Symbol="Up" Width="25" Margin="125,10,0,0"/>
+                        <TextBlock Text="Speed" Margin="205,0,0,0"/>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
+            <ListView x:ConnectionId='16' x:Name="ActionList" Width="50" VerticalAlignment="Top" Margin="0,275,0,0">
+                <ListViewItem x:ConnectionId='17' x:Name="PlayPauseButton" Width="33"                           Margin="-1,0,0,2">
+                    <StackPanel Padding="0,5,0,5">
+                        <SymbolIcon x:ConnectionId='23' Symbol="Play" Width="25" x:Name="PlayPauseIcon"/>
+                        <TextBlock x:ConnectionId='24' x:Name="PlayPauseText" Text="Start"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:ConnectionId='18' x:Name="StopButton" Width="33"                            Margin="0,0,0,2" Visibility="Collapsed">
+                    <StackPanel Padding="0,5,0,5">
+                        <SymbolIcon Symbol="Stop" Width="25"/>
+                        <TextBlock Text="Stop"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:ConnectionId='19' x:Name="AddButton" Width="20"                           Margin="0,0,0,0" Visibility="Visible" Background="#00000000">
+                    <StackPanel Padding="0,7,0,5">
+                        <SymbolIcon x:ConnectionId='22' Symbol="Add" Width="25" x:Name="AddIcon"/>
+                        <TextBlock Text="Add"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:ConnectionId='20' x:Name="ShufflerButton" Width="20"                                Margin="-7,0,0,0">
+                    <StackPanel Padding="0,7,0,5">
+                        <SymbolIcon x:ConnectionId='21' Symbol="Shuffle" Width="25" x:Name="Debug"/>
+                        <TextBlock Text="Shuffle"/>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
+        </Grid>
+        <GridView x:ConnectionId='2' Grid.Column="1" x:Name="LeftItemGrid"
+                                                             Margin="10" Height="auto" Width="500"
+                                                     IsItemClickEnabled="True"                                       >
+            <GridView.ItemTemplate>
+                <DataTemplate                        >
+                    <StackPanel x:ConnectionId='12' Orientation="Horizontal" HorizontalAlignment="Left" Width="500">
+                        <SymbolIcon Visibility="Collapsed" Symbol="Placeholder" Margin="5 0 5 5"/>
+                        <TextBlock x:ConnectionId='13'                      Margin="5 0 5 5" FontSize="27"
+                                   TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                        <ProgressBar x:ConnectionId='14' IsIndeterminate="False" Visibility="Visible" Maximum="100"                                        Width="100" Foreground="White"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controls:StaggeredPanel DesiredColumnWidth="500"
+                                             HorizontalAlignment="Stretch"
+                                             VerticalAlignment="Top"
+                                             ColumnSpacing="5"
+                                             RowSpacing="0" />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+            <GridView.ItemContainerStyle>
+                <Style TargetType="GridViewItem">
+                    <Setter Property="Background" Value="#2030E2DA"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
+            </GridView.ItemContainerStyle>
+        </GridView>
+        <GridView x:ConnectionId='3' Grid.Column="2" x:Name="RightItemGrid"                                             Margin="10" 
+                  Height="auto" IsItemClickEnabled="False" SelectionMode="None" Width="500">
+            <GridView.ItemTemplate>
+                <DataTemplate                        >
+                    <StackPanel x:ConnectionId='8' Orientation="Horizontal" HorizontalAlignment="Left">
+                        <SymbolIcon Visibility="Collapsed" Symbol="Placeholder" Margin="5 0 5 5"/>
+                        <TextBlock x:ConnectionId='9'                      Margin="5 0 5 5" FontSize="27"
+                                   Width="auto" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                        <ProgressBar x:ConnectionId='10' IsIndeterminate="False" Visibility="Visible" Maximum="100"                           Width="100" Foreground="White"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controls:StaggeredPanel DesiredColumnWidth="500"
+                                             HorizontalAlignment="Stretch"
+                                             VerticalAlignment="Top"
+                                             ColumnSpacing="5"
+                                             RowSpacing="0" />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+            <GridView.ItemContainerStyle>
+                <Style TargetType="GridViewItem">
+                    <Setter Property="Background" Value="#2030E2DA"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
+            </GridView.ItemContainerStyle>
+        </GridView>
+        <controls1:TeachingTip x:ConnectionId='4' x:Name="AddItemPopup"
+                               Title="Add new item"
+                                                          
+                               PreferredPlacement="Right">
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:ConnectionId='5' x:Name="AddItemTextBox" Margin="0,0,10,0" MinWidth="200"                            />
+                <Button x:ConnectionId='6' x:Name="AddItemPopupButton"                                 >
+                    <SymbolIcon Symbol="Accept"/>
+                </Button>
+            </StackPanel>
+        </controls1:TeachingTip>
+    </Grid>
+</Page>
+
